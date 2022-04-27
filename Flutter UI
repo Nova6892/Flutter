@@ -1,0 +1,39 @@
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Flutter UI'),
+          centerTitle: true,
+        ),
+          body: Container(
+            child: Column(
+              children: const <Widget>[
+                SizedBox(height: 20),
+                Text('My name is Nova', style: TextStyle(color: Colors.black, fontSize: 28,fontWeight: FontWeight.bold)),
+                Divider(color: Colors.black,height: 20),
+                SizedBox(height: 20),
+                Text('I am from BVCOE', style: TextStyle(color: Colors.black, fontSize: 28)),
+                Divider(color: Colors.black,height: 20),
+                SizedBox(height: 20),
+                Text('I live in Chembur', style: TextStyle(color: Colors.black, fontSize: 28)),
+                Divider(color: Colors.black,height: 20),
+                SizedBox(height: 20),
+                Text('I love DSA', style: TextStyle(color: Colors.black, fontSize: 28)),
+                Divider(color: Colors.black,height: 20),
+              ],
+            ),
+          ),
+      ),
+    );
+  }
+}
