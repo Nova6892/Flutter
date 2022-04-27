@@ -1,0 +1,70 @@
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Simple Form'),
+          centerTitle: true,
+        ),
+        body: CustomForm(),
+      )
+    );
+  }
+}
+
+class CustomForm extends StatefulWidget {
+  @override
+  MyCustomFormState createState(){
+    return MyCustomFormState();
+  }
+}
+
+class MyCustomFormState extends State<CustomForm> {
+  final _formKey = GlobalKey<FormState>();
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      child: Column(
+        children: <Widget>[
+          TextFormField(
+            decoration: InputDecoration(
+              icon: const Icon(Icons.person),
+              labelText: 'Name',
+              hintText: 'Enter Your name',
+            ),
+          ),
+          TextFormField(
+            decoration: const InputDecoration(
+              icon: Icon(Icons.phone),
+              labelText: 'Phone',
+              hintText: 'Enter Your Phone number',
+            ),
+          ),
+          TextFormField(
+            decoration: const InputDecoration(
+              icon: Icon(Icons.calendar_today),
+              labelText: 'D.O.B',
+              hintText: 'Enter Your Date of Birth',
+            ),
+          ),
+          new Container(
+            padding: EdgeInsets.only(left: 150, right:40),
+            child: new RaisedButton(
+              child: const Text('Submit'),
+              onPressed: null,
+            )
+          )
+        ],
+      ),
+    );
+  }
+}
